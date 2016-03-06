@@ -1,3 +1,10 @@
+'use strict';
+/*eslint-disable new-cap, no-unused-vars, 
+  no-use-before-define, no-trailing-spaces, 
+  no-mixed-spaces-and-tabs, no-multi-spaces, camelcase, no-loop-func,
+  comma-spacing,no-spaced-func,space-infix-ops,
+  key-spacing */
+/*global  $ */
 $(function(){
 	var scratchFg = $('.scratch-pad').attr('data-scratch-pattern');
 	$('.scratch-pad').wScratchPad({
@@ -22,8 +29,8 @@ $(function(){
 	});
 
 	function gotoStage(stage){
-		$.each(stages,function(idx, rm){
-			if(this != stage){
+		$.each(stages, function(idx, rm){
+			if(this !== stage){
 				$('body').removeClass(rm);
 			}
 		});
