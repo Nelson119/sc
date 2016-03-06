@@ -195,6 +195,7 @@ body {
 .scratch-content{
   opacity: 0;
   height: 0;
+  overflow: hidden;
   transition: 0.45s opacity 0s, 0s height 0.45s;
   .logo{
     text-align: center;
