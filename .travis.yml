@@ -3,7 +3,7 @@ env:
   global:
   - GH_USER: nelson
 node_js:
-- '0.10'
+- '0.12'
 install:
 - npm cache-clean
 - npm install jshint mocha gulp bower -g 
