@@ -22,7 +22,7 @@
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
   </head>
-  <body class="index">
+  <body class="fill">
     
     <section class="container">
       <section class="header">
@@ -53,24 +53,61 @@
         </aside>
       </section>
       <section class="background darken-33 scratch-content" style="background-image: url(images/index/custom-background.png)">
+        <aside class="coupon-container">
+          <aside class="logo vertical-bottom">
+            <img src="images/logo-80x80.png">
+          </aside>
+          <aside class="scratch-sample vertical-middle text-center">
+            <figure class="card Open-Sans-bold-600 Open-Noto-bold-700">
+              <article>
+                <span class="result text-blue">YOU WIN!!</span>
+                <span class="coupon text-navi">NT.200</span>
+                <span class="coupon sub  text-navi">抵用券</span>
+                <i class="scratch-pad" data-scratch-pattern="images/common/scratch-overlay.png"></i>
+              </article>
+            </figure>
+          </aside>
+          <aside class="use-term">
+            <aside class="qrcode vertical-middle text-center">
+              <img src="images/qrcode.png">
+            </aside>
+            <aside class="info">
+              <h3 class="Open-Sans-bold-600">Use Method</h3>
+              <ol>
+                <li>連結到刮刮樂頁面(含公司logo,活動說明,刮刮樂)</li>
+                <li>閱讀並同意法律合約</li>
+              </ol>
+              <h3 class="Open-Sans-bold-600"><a href="javascript:">Location Link</a></h3>
+              <h4><a class="place" href="javascript:">10654臺北市大安區忠孝東路3段302號</a></h4>
+              <h3 class="Open-Sans-bold-600"><a href="javascript:">Legal Term Link</a></h3>
+            </aside>
+            <aside class="countdown">
+              <h5 class="Open-Sans-bold-600">Expiration Date</h5>
+              <aside class="counter text-center">
+                <span id="expired" class="Open-Sans-bold-600"></span>
+                <span>Day&nbsp;&nbsp;Hours&nbsp;&nbsp;Mins&nbsp;&nbsp;Secs</span>
+              </aside>
+            </aside>
+            <aside class="functions vertical-middle text-center">
+              <a href="javascript:" class="btn-fill">
+                <img src="images/common/next.png">
+              </a>
+            </aside>
+          </aside>
+          <aside class="functions vertical-middle text-center">
+            <a href="javascript:" class="btn-coupon">
+              <img src="images/common/next.png">
+            </a>
+          </aside>
+        </aside>
+      </section>
+      <section class="background darken-33 form" style="background-image: url(images/index/custom-background.png)">
         <aside class="logo vertical-bottom">
           <img src="images/logo-80x80.png">
         </aside>
-        <aside class="scratch-sample vertical-middle text-center">
-          <figure class="card Open-Sans-bold-600 Open-Noto-bold-700">
-            <article>
-              <span class="result text-blue">YOU WIN!!</span>
-              <span class="coupon text-navi">NT.200</span>
-              <span class="coupon sub  text-navi">抵用券</span>
-              <i class="scratch-pad" data-scratch-pattern="images/common/scratch-overlay.png"></i>
-            </article>
-          </figure>
-        </aside>
-        <aside class="functions vertical-middle text-center">
-          <a href="javascript:" class="btn-legal">
-            <img src="images/common/next.png">
-          </a>
-        </aside>
+        <form action="" method="post">
+          <input>
+        </form>
       </section>
       <aside class="legal-term text-white">
         <aside class="range">
@@ -113,6 +150,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/wScratchPad/wScratchPad.min.js"></script>
     <script src="/bower_components/scratchcard/dist/scratchcard.js"></script>
+    <script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

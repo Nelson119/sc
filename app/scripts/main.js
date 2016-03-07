@@ -5,6 +5,9 @@
   comma-spacing,no-spaced-func,space-infix-ops,
   key-spacing */
 /*global  $ */
+
+
+
 $(function(){
 	var scratchFg = $('.scratch-pad').attr('data-scratch-pattern');
 	$('.scratch-pad').wScratchPad({
@@ -21,7 +24,7 @@ $(function(){
 		},       // Set scratcMove callback.
 		cursor      : 'grab' // Set cursor.
 	});
-	var stages = ['index', 'legal', 'scratch', 'scratch-done'];
+	var stages = ['index', 'legal', 'scratch', 'scratch-done', 'coupon', 'fill'];
 	$.each(stages, function(i, s){
 		$('.btn-' + s).on('click', function(){
 			gotoStage(s);
@@ -36,4 +39,12 @@ $(function(){
 		});
 		$('body').addClass(stage);
 	}
+
+	$('#expired').countdown('2016/05/01', function(event) {
+		var weeks = event.strftime('%w') * 1;
+		var days = event.strftime('%d') * 1;
+		var total = weeks * 7 + days;
+		$(this).html(event.strftime(total + ' : %H : %M : %S'));
+	});
+
 });
