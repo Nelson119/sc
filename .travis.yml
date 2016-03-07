@@ -5,6 +5,7 @@ env:
 node_js:
 - '0.10'
 install:
+- npm cache-clean
 - npm install jshint mocha gulp bower -g 
 - npm install
 - bower install
