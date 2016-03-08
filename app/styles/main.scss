@@ -412,9 +412,9 @@ body {
 .form{
   height:vw640(1150);
   &:before{
-    // height: 0;
-    // overflow: hidden;
-    // opacity: 0;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
     position: absolute;
     content:'';
     display: block;
