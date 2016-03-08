@@ -5,7 +5,8 @@
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
     "wScratchPad": "^2.1.0",
-    "scratchcard": "^0.5.5"
+    "scratchcard": "^0.5.5",
+    "jquery.countdown": "^2.1.0"
   },
   "overrides": {
     "bootstrap-sass": {
@@ -18,6 +19,11 @@
     "wScratchPad": {
       "main": [
         "./wScratchPad.min.js"
+      ]
+    },
+    "jquery.countdown": {
+      "main": [
+        "./dist/jquery.countdown.js"
       ]
     }
   },
