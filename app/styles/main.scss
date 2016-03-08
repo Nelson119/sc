@@ -410,11 +410,11 @@ body {
 }
 
 .form{
-  height:vw640(1150);
-  &:before{
     height: 0;
     overflow: hidden;
     opacity: 0;
+  // height:vw640(1150);
+  &:before{
     position: absolute;
     content:'';
     display: block;
