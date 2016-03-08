@@ -24,7 +24,7 @@ $(function(){
 		},       // Set scratcMove callback.
 		cursor      : 'grab' // Set cursor.
 	});
-	var stages = ['index', 'legal', 'scratch', 'scratch-done', 'coupon', 'fill'];
+	var stages = ['index', 'legal', 'scratch', 'scratch-done', 'coupon'];
 	$.each(stages, function(i, s){
 		$('.btn-' + s).on('click', function(){
 			gotoStage(s);
