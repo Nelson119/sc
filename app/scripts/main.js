@@ -9,22 +9,40 @@
 
 
 $(function(){
-	var scratchFg = $('.scratch-pad').attr('data-scratch-pattern');
-	$('.scratch-pad').wScratchPad({
-		size        : 30,          // The size of the brush/scratch.
-		bg          : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2P4zwAAAgEBAOIxSPwAAAAASUVORK5CYII=',  // Background (image path or hex color).
-		fg          : scratchFg,  // Foreground (image path or hex color).
-		realtime    : true,       // Calculates percentage in realitime.
-		scratchDown : null,       // Set scratchDown callback.
-		scratchUp   : null,       // Set scratchUp callback.
-		scratchMove : function (e, percent) {
-			if(percent > 60){
-				gotoStage('scratch-done');
-			}
-		},       // Set scratcMove callback.
-		cursor      : 'grab' // Set cursor.
+	$('.scratch-pad').each(function(){
+		var o = this;
+		var scratchFg = $(o).attr('data-scratch-pattern');
+		$(o).wScratchPad({
+			size        : 30,          // The size of the brush/scratch.
+			bg          : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVQYV2P4zwAAAgEBAOIxSPwAAAAASUVORK5CYII=',  // Background (image path or hex color).
+			fg          : scratchFg,  // Foreground (image path or hex color).
+			realtime    : true,       // Calculates percentage in realitime.
+			scratchDown : null,       // Set scratchDown callback.
+			scratchUp   : null,       // Set scratchUp callback.
+			scratchMove : function (e, percent) {
+				// console.log($(o).hasAttr('data-group'));
+				if($(o).attr('data-group')){
+					var group = $(o).attr('data-group');
+					$(o).attr('data-percent', percent);
+					var result = true;
+					$('[data-group=' + group + ']').each(function(i, d){
+						percent = $(d).attr('data-percent') || 0;
+						result = result && percent >= 60;
+					});
+					if(result){
+						gotoStage('scratch-done');
+					}
+				}else{
+					if(percent > 60){
+						gotoStage('scratch-done');
+					}	
+				}
+			},       // Set scratcMove callback.
+			cursor      : 'grab' // Set cursor.
+		});
+
 	});
-	var stages = ['index', 'legal', 'scratch', 'scratch-done', 'coupon'];
+	var stages = ['index', 'legal', 'scratch', 'scratch-done', 'coupon', 'fill'];
 	$.each(stages, function(i, s){
 		$('.btn-' + s).on('click', function(){
 			gotoStage(s);
