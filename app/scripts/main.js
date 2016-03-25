@@ -42,7 +42,7 @@ $(function(){
 		});
 
 	});
-	var stages = ['index', 'legal', 'scratch', 'scratch-done', 'coupon', 'fill'];
+	var stages = ['index', 'legal', 'scratch', 'scratch-done', 'email', 'sms', 'thankyou', 'coupon'];
 	$.each(stages, function(i, s){
 		$('.btn-' + s).on('click', function(){
 			gotoStage(s);
@@ -51,14 +51,18 @@ $(function(){
 
 	function gotoStage(stage){
 		$.each(stages, function(idx, rm){
-			if(this !== stage){
+			if(this !== stage){				
 				$('body').removeClass(rm);
 			}
 		});
+		if(stage === 'coupon'){
+			$('.scratch-content .scratch-sample:visible').appendTo($('.scratch-result'));
+		}
 		$('body').addClass(stage);
 	}
 
-	$('#expired').countdown('2016/05/01', function(event) {
+	var expiration = $('#expired').attr('data-expiration');
+	$('#expired').countdown(expiration, function(event) {
 		var weeks = event.strftime('%w') * 1;
 		var days = event.strftime('%d') * 1;
 		var total = weeks * 7 + days;
