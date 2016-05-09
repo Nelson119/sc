@@ -487,11 +487,13 @@ body {
     font-size: vw320(20);
     word-spacing: vw320(5);
     padding-left: vw320(5);
+    position: relative;
   }
   .functions{
     margin-top: vw320(125);
     letter-spacing: vw320(68);
     padding-left: vw320(5);
+    position: relative;
     a{
       width: vw320(35);
       display: inline-block;
@@ -502,8 +504,8 @@ body {
   }
   .counter-label{
     position:absolute;
-    top:vw320(912);
-    left:vw320(47);
+    top:vw320(-30);
+    left:vw320(28);
     color:#fff;
     font-size: vw320(12);
   }
@@ -512,35 +514,35 @@ body {
   .counter-label-min,
   .counter-label-sec{
     position:absolute;
-    top:vw320(966);
-    left:vw320(83);
+    top:vw320(24);
+    left:vw320(68);
     color: inherit;
     font-size: vw320(10);
     font-weight: normal;
 
   }
   .counter-label-hour{
-    left:vw320(126);
+    left:vw320(112);
   }
   .counter-label-min{
-    left:vw320(176);
+    left:vw320(162);
   }
   .counter-label-sec{
-    left:vw320(223);
+    left:vw320(210);
   }
   .save-label{
     position:absolute;
     color:#DB3D3D;
-    top:vw320(1048);
-    left:vw320(74);
+    top:vw320(-50);
+    left:vw320(61);
     letter-spacing: 1px;
     font-weight: normal;
     font-size: vw320(14);
   }
   .save-label-email{
     position:absolute;
-    top:vw320(1077);
-    left:vw320(74);
+    top:vw320(-25);
+    left:vw320(61);
     font-weight: normal;
     letter-spacing: 1px;
     font-size: vw320(11);
@@ -548,8 +550,8 @@ body {
   }
   .save-label-sms{
     position:absolute;
-    top:vw320(1077);
-    left:vw320(185);
+    top:vw320(-25);
+    left:vw320(168);
     font-weight: normal;
     letter-spacing: 1px;
     font-size: vw320(11);
